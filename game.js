@@ -1,6 +1,6 @@
 
 var gameLevel = 0;
-var isGameOver = false;
+var isGameOver = true;
 var gameStarted = false;
 
 var userClickedPattern = [];
@@ -63,7 +63,8 @@ function gameOver() {
 // Starting the game
 
 $(document).keypress(function () {
-   if(gameStarted === false) {
+   if(gameStarted === false && isGameOver === true) {
+     isGameOver = false;
      gameStarted = true;
      nextSequence();
    }
